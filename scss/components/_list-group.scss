@@ -1,0 +1,43 @@
+// List group
+
+#li_select_theme {
+  form::after {
+    padding-top: .325rem;
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    color: $pma-link-color;
+    content: "Scheme: #{$color-scheme} / Version: #{$pma-theme-version}";
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 0;
+    }
+  }
+}
+
+.list-group-item a,
+.list-group-item button {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  line-height: 1.2;
+}
+
+.list-group-item label {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+}
+
+.list-group-item .icon,
+.list-group-item img.icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  color: inherit;
+}
+
+.list-group-item .ic_s_host { color: $pma-blue; }
+.list-group-item .ic_s_passwd { color: $pma-teal; }
+.list-group-item .ic_s_asci { color: $pma-orange; }
+.list-group-item .ic_b_tblops { color: $pma-indigo; }
+.list-group-item .ic_s_lang { color: $pma-green; }
+.list-group-item .ic_s_theme { color: $pma-pink; }

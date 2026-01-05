@@ -1,0 +1,67 @@
+// Buttons
+
+.btn-outline-secondary {
+  @include button-variant($dark, $dark);
+}
+
+.btn,
+.btn-link {
+  color: $pma-button-color;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.btn .icon,
+.btn img.icon,
+.btn-link .icon,
+.btn-link img.icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+button.mult_submit,
+.checkall_box + label {
+  color: $pma-button-color;
+  cursor: pointer;
+  outline: none;
+}
+
+button.mult_submit {
+  padding-top: 0;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $pma-button-color;
+    text-decoration: underline;
+  }
+}
+
+.checkall_box + label {
+  text-decoration: none;
+
+  &:hover {
+    color: $pma-button-color;
+    text-decoration: underline;
+  }
+}
+
+#bulkActionDropButton,
+#bulkActionExportButton {
+  background-color: #111519;
+}
+
+.btn-primary, .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-child {
+  --bs-btn-color: #f1e6f1;
+  --bs-btn-bg: #44325c;
+  --bs-btn-border-color: #432a43;
+  --bs-btn-hover-color: #332348;
+  --bs-btn-hover-bg: #9a67dd;
+  --bs-btn-hover-border-color: #553155;
+}

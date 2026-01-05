@@ -1,0 +1,8 @@
+{
+    "name": "orzedpma",
+    "version": "1.0.0",
+    "description": "Modern near-dark theme with muted accents and low glare for phpMyAdmin.",
+    "author": "Orzed Software",
+    "url": "https://www.orzed.com",
+    "supports": ["5.2"]
+}

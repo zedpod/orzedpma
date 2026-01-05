@@ -1,0 +1,49 @@
+// Theme: orzedpma
+
+// 1. Include any default variable overrides here
+@import "core/colors";
+@import "core/variables";
+
+// 2. Include Bootstrap
+@import "vendors/bootstrap";
+@import "vendors/fontawesome";
+
+// 3. Include "phpMyAdmin" base code
+@import "base/fonts";
+@import "base/root";
+@import "base/reboot";
+@import "base/common";
+
+// 4. Include "phpMyAdmin" layout code
+@import "layout/navigation";
+@import "layout/forms";
+@import "layout/console";
+
+// 5. Include "phpMyAdmin" components code
+@import "components/tables";
+@import "components/buttons";
+@import "components/icons";
+@import "components/fontawesome-icons";
+@import "components/nav";
+@import "components/navbar";
+@import "components/breadcrumb";
+@import "components/alerts";
+@import "components/list-group";
+@import "components/modal";
+@import "components/text";
+
+// 6. Include "phpMyAdmin" modules code
+@import "modules/ui-custom";
+@import "modules/enum-editor";
+@import "modules/gis";
+@import "modules/designer";
+@import "modules/codemirror";
+@import "modules/jqplot";
+
+// 7. Include "phpMyAdmin" pages/specific code
+@import "pages/settings";
+@import "pages/print";
+
+// DEBUG
+// stylelint-disable-next-line scss/at-import-no-partial-leading-underscore
+// @import "_debug";

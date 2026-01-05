@@ -1,0 +1,64 @@
+// stylelint-disable scss/dollar-variable-colon-space-after
+// Colors
+// =============================================================================
+
+// PMA color system
+// -----------------------------------------------------------------------------
+$white:             #fff;
+$black:             #000;
+$pma-gray-100:      #f6f8fa;
+$pma-gray-200:      #e9eef2;
+$pma-gray-300:      #d6dde5;
+$pma-gray-400:      #9aa5b1;
+$pma-gray-500:      #5b6672;
+$pma-gray-600:      #3a424b;
+$pma-gray-700:      #2a3138;
+$pma-gray-800:      #21262c;
+$pma-gray-900:      #14171a;
+$pma-gray-100-rgb:  246, 248, 250;
+$pma-gray-200-rgb:  233, 238, 242;
+$pma-gray-300-rgb:  214, 221, 229;
+$pma-gray-400-rgb:  154, 165, 177;
+$pma-gray-500-rgb:  91, 102, 114;
+$pma-gray-600-rgb:  58, 66, 75;
+$pma-gray-700-rgb:  42, 49, 56;
+$pma-gray-800-rgb:  33, 38, 44;
+$pma-gray-900-rgb:  27, 31, 36;
+$pma-blue:          #8aa2b8;
+$pma-indigo:        #8c93b8;
+$pma-purple:        #9a8fb8;
+$pma-pink:          #c08fa4;
+$pma-red:           #c07f89;
+$pma-orange:        #c9a275;
+$pma-yellow:        #c8b07a;
+$pma-green:         #8aa88f;
+$pma-teal:          #7fa7a2;
+$pma-cyan:          #8aa5b6;
+$pma-nord:          #8aa2b8;
+
+// Theme Colors
+// -----------------------------------------------------------------------------
+$pma-theme-colors: (
+  "white":    $white,
+  "black":    $black,
+  "gray-100": $pma-gray-100,
+  "gray-200": $pma-gray-200,
+  "gray-300": $pma-gray-300,
+  "gray-400": $pma-gray-400,
+  "gray-500": $pma-gray-500,
+  "gray-600": $pma-gray-600,
+  "gray-700": $pma-gray-700,
+  "gray-800": $pma-gray-800,
+  "gray-900": $pma-gray-900,
+  "blue":     $pma-blue,
+  "indigo":   $pma-indigo,
+  "purple":   $pma-purple,
+  "pink":     $pma-pink,
+  "red":      $pma-red,
+  "orange":   $pma-orange,
+  "yellow":   $pma-yellow,
+  "green":    $pma-green,
+  "teal":     $pma-teal,
+  "cyan":     $pma-cyan,
+  "nord":     $pma-nord
+);

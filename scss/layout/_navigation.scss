@@ -1,0 +1,634 @@
+// stylelint-disable at-rule-empty-line-before
+// stylelint-disable scss/at-extend-no-missing-placeholder
+// Navigation
+
+#pma_navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 800;
+  width: $navigation-width;
+  height: 100vh;
+  background-color: $navigation-bg;
+  border-right: 1px solid $navigation-border-color;
+  box-shadow: 2px 0 12px rgba($black, .15);
+
+  ul {
+    margin: 0;
+  }
+
+  form {
+    // see `.pageselector` below
+  }
+
+  select {
+    &#select_server,
+    &#lightm_db {
+      width: 100%;
+    }
+
+    &.pageselector {
+      // see forms.scs
+      padding: 3px 52px;
+      font-size: 10px;
+    }
+  }
+
+  div {
+    &.pageselector {
+      margin: 0;
+      margin-left: .75em;
+      text-align: center;
+      border-left: 1px solid $border-color;
+    }
+  }
+
+  #pmalogo,
+  #navipanellinks,
+  #serverChoice,
+  #recentTableList,
+  #favoriteTableList,
+  #databaseList,
+  div.pageselector.dbselector {
+    padding: 8px 10px;
+    text-align: center;
+    border: 0;
+  }
+
+  #pmalogo {
+    display: none;
+    height: auto;
+    padding: 10px 12px;
+    background-color: transparent;
+    border-bottom: 1px solid $navigation-border-color;
+
+    img {
+      display: none;
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      color: $pma-gray-200;
+      text-decoration: none;
+      letter-spacing: .04em;
+
+      &::before {
+        content: "phpMyAdmin";
+        font-size: 1rem;
+        font-weight: 300;
+      }
+
+      &::after {
+        content: "Orzed";
+        font-size: .71rem;
+        font-weight: 500;
+        color: #445465;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: .04em;
+      color: $pma-gray-200;
+      text-transform: none;
+
+      &::after {
+        content: "Orzed";
+        display: block;
+        margin-top: 2px;
+        font-size: .71rem;
+        font-weight: 500;
+        color: #445465;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  #navipanellinks {
+    padding: 8px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .35rem;
+    background-color: transparent;
+    border-bottom: 1px solid $navigation-border-color;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: 8px;
+      line-height: 1;
+      color: $pma-gray-300;
+
+      &:hover,
+      &:focus {
+        color: $pma-gray-100;
+      }
+    }
+
+    .icon,
+    img.icon {
+      width: 1rem;
+      height: 1rem;
+      color: inherit;
+    }
+
+    .icon.ic_b_home { color: $pma-blue; }
+    .icon.ic_s_loggoff { color: $pma-pink; }
+    .icon.ic_b_docs { color: $pma-green; }
+    .icon.ic_b_sqlhelp { color: $pma-orange; }
+    .icon.ic_s_cog { color: $pma-indigo; }
+    .icon.ic_s_reload { color: $pma-cyan; }
+  }
+
+  #serverChoice {
+    #list_server {
+      li {
+        display: flex;
+        flex-direction: column;
+
+        strong {
+          color: $pma-primary;
+        }
+      }
+    }
+  }
+
+  #recentTable,
+  #favoriteTable {
+    width: 200px;
+  }
+}
+
+.pageselector {
+  form {
+    display: inline;
+  }
+}
+
+select {
+  &.pageselector {
+    display: inline-block;
+    width: auto;
+    margin: 5px;
+  }
+}
+
+#pma_navigation_header {
+  overflow: hidden;
+}
+
+#pma_navigation_content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+
+  > img.throbber {
+    display: none;
+    margin: .3em auto 0;
+  }
+}
+
+#pma_navigation_select_database {
+  padding: 0 0 0;
+  margin: 0;
+  text-align: left;
+  border: 0;
+}
+
+#pma_navigation_db_select {
+  margin-top: .5em;
+  margin-left: .75em;
+
+  select {
+    width: 92%;
+    padding: 4px 6px;
+    margin: 0 0 0;
+    font-size: 1.11em;
+  }
+}
+
+#pma_navigation_tree_content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  padding-left: 8px;
+
+  a.hover_show_full {
+    position: relative;
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    line-height: 1.2;
+    vertical-align: middle;
+  }
+}
+
+#pma_navigation_tree {
+  position: relative;
+  height: 74%;
+  margin: 0;
+  margin-left: 0;
+  overflow: hidden;
+  color: $navigation-color;
+
+  a {
+    padding-left: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    line-height: 1.2;
+    color: $link-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    clear: both;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    ul {
+      position: relative;
+    }
+  }
+
+  li {
+    clear: both;
+    min-height: 16px;
+    margin-bottom: 0;
+    white-space: nowrap;
+    padding: .08rem 0;
+
+    &.activePointer,
+    &.selected {
+      color: $pma-body-color;
+      background-color: $navigation-selected-bg;
+    }
+
+    .dbItemControls {
+      float: right;
+      padding-right: 4px;
+    }
+
+    .navItemControls {
+      float: right;
+      display: none;
+      padding-right: 4px;
+    }
+
+    &.activePointer .navItemControls {
+      display: none;
+      opacity: .5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &.fast_filter {
+      clear: both;
+      min-height: 16px;
+      white-space: nowrap;
+    }
+
+    &.last > ul {
+      background: none;
+    }
+
+    > {
+      a,
+      i {
+        height: 1.5em;
+        padding-left: .3em;
+        line-height: 1.5em;
+      }
+    }
+
+    > span,
+    span.hover_show_full {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      line-height: 1.5em;
+    }
+  }
+
+  i {
+    display: block;
+  }
+
+  div {
+    &.block {
+      position: relative;
+      float: left;
+      width: 1.5em;
+      min-width: 16px;
+      height: 1.5em;
+      min-height: 16px;
+
+      &.double {
+        width: 2.5em;
+      }
+
+      i,
+      b {
+        position: absolute;
+        bottom: .7em;
+        left: .75em;
+        z-index: 0;
+        width: 1.5em;
+        min-width: 16px;
+        height: 1.7em;
+        min-height: 8px;
+      }
+
+      // Top and right segments for the tree element connections
+      i {
+        position: relative;
+        z-index: 0;
+        display: block;
+        border-bottom: 1px solid $border-color;
+        border-left: 1px solid $border-color;
+
+        // Removes top segment
+        &.first {
+          border-left: 0;
+        }
+      }
+
+      // Bottom segment for the tree element connections
+      b {
+        bottom: 0;
+        left: .75em;
+        display: block;
+        height: .75em;
+        border-left: 1px solid $border-color;
+      }
+
+      a,
+      u {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 10;
+        transform: translate(-50%, -50%);
+      }
+
+      a + a {
+        left: 100%;
+      }
+
+      &.double {
+        a,
+        u {
+          left: 33%;
+        }
+
+        a + a {
+          left: 85%;
+        }
+      }
+
+      img {
+        position: static;
+        display: block;
+        margin: 0;
+      }
+    }
+
+    &.throbber img {
+      top: 2px;
+      left: 2px;
+    }
+  }
+
+  .list_container {
+    padding-left: .75em;
+    margin-left: .75em;
+    border-left: 1px solid $border-color;
+
+    li.last.database {
+      // Revert the effect of the rule that is applied on all the tree
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .last > .list_container {
+    border-left: 0 solid $border-color;
+  }
+}
+
+#pma_navigation_tree {
+  .icon {
+    color: $pma-gray-300;
+  }
+
+  .icon,
+  img.icon {
+    width: 1rem;
+    height: 1rem;
+    flex: 0 0 auto;
+    vertical-align: middle;
+  }
+
+  a.expander {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  a.expander .icon,
+  a.expander img.icon {
+    width: .95rem;
+    height: .95rem;
+  }
+
+  .ic_database,
+  .ic_s_db,
+  .ic_b_sdb,
+  .ic_b_newdb {
+    color: $orzed-accent-db;
+  }
+
+  .ic_b_group {
+    color: $orzed-accent-group;
+  }
+
+  .ic_s_tbl,
+  .ic_b_tblops,
+  .ic_b_tbloptimize,
+  .ic_b_tblanalyse,
+  .ic_b_newtbl,
+  .ic_b_snewtbl {
+    color: $orzed-accent-table;
+  }
+
+  .ic_b_insrow,
+  .ic_b_column_add,
+  .ic_centralColumns_add {
+    color: $orzed-accent-column;
+  }
+
+  .ic_s_views,
+  .ic_b_views,
+  .ic_b_view,
+  .ic_b_view_add {
+    color: $orzed-accent-view;
+  }
+}
+
+// Fast filter
+li.fast_filter {
+  padding-right: 35px;
+  padding-left: .75em;
+  margin-left: .75em;
+  list-style: none;
+  border-left: 1px solid $border-color;
+
+  input {
+    font-size: .7em;
+  }
+
+  .searchClauseClear {
+    font-size: .7em;
+    font-weight: bold;
+    color: $danger;
+    border-color: $input-border-color;
+  }
+
+  &.db_fast_filter {
+    margin-left: 0;
+    border: 0;
+  }
+}
+
+#navigation_controls_outer {
+  min-height: 24px !important;
+
+  &.activePointer {
+    background-color: transparent !important;
+  }
+}
+
+#navigation_controls {
+  float: right;
+  padding-right: 1.5rem;
+}
+
+// Resize handler
+#pma_navigation_resizer {
+  position: fixed;
+  top: 0;
+  left: 240px;
+  z-index: 801;
+  width: 5px !important;
+  height: 100%;
+  cursor: col-resize;
+  background-color: rgba($black, .125);
+
+  &:hover {
+    background-color: $navigation-resizer-hover-bg;
+  }
+}
+
+#pma_navigation_collapser {
+  position: fixed;
+  top: 0;
+  left: $navigation-width;
+  z-index: 800;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 0;
+  color: $pma-link-color;
+  cursor: pointer;
+  background-color: $pma-body-bg;
+  background-repeat: no-repeat;
+  background-position: center 55%;
+  background-size: 50%;
+  @extend .ic_chevron-left;
+
+  &[title="Show panel"] {
+    @extend .ic_chevron-right;
+  }
+}
+
+// Quick warp links
+.pma_quick_warp {
+  position: relative;
+  margin-top: 5px;
+  margin-left: 2px;
+
+  .drop_list {
+    float: left;
+    padding: 2px 0;
+    margin-left: 3px;
+
+    &:hover {
+      ul {
+        display: block;
+      }
+    }
+
+    ul {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 3px;
+      z-index: 802;
+      display: none;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      overflow-y: auto;
+      list-style: none;
+      background: $navigation-bg;
+      border: 1px solid $navigation-border-color;
+      border-radius: .3em;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      box-shadow: 0 0 5px $navigation-shadow-color;
+    }
+
+    li {
+      padding: 0;
+      white-space: nowrap;
+      border-radius: 0;
+    }
+
+    a {
+      display: block;
+      padding: .2em .3em;
+
+      &.favorite_table_anchor {
+        float: left;
+        clear: left;
+        padding: .1em .3em 0;
+      }
+    }
+  }
+
+  .drop_button {
+    @include button-variant($secondary, $secondary);
+  }
+}

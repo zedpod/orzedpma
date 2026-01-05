@@ -1,0 +1,365 @@
+// Tables
+
+.table {
+
+  --bs-table-color-type: initial;
+  --bs-table-bg-type: initial;
+  --bs-table-color-state: initial;
+  --bs-table-bg-state: initial;
+  --bs-table-color: #e1e6ec;
+  --bs-table-bg: #14171a;
+  --bs-table-border-color: #17181a;
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-color: #e1e6ec;
+  --bs-table-striped-bg: #171b1f;
+  --bs-table-active-color: #e1e6ec;
+  --bs-table-active-bg: rgba(0, 0, 0, 0);
+  --bs-table-hover-color: #f8f3f8;
+  --bs-table-hover-bg: #271d29;
+
+  &.table-sm>:not(caption)>*>* {
+    padding: .35rem .35rem;
+  }
+  
+  a {
+    color: #cec7aa;
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  .favorite_table_anchor {
+    text-decoration: none;
+  }
+
+  thead th {
+    color: $pma-gray-300;
+    font-weight: 600;
+  }
+
+}
+
+.table_results td.d-print-none .text-nowrap > a {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0;
+  line-height: 1;
+}
+
+.table_results td.d-print-none .text-nowrap > a .icon,
+.table_results td.d-print-none .text-nowrap > a img.icon {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  font-size: 1rem;
+  background-size: 1rem 1rem;
+}
+
+.table_results td.d-print-none a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  line-height: 1.2;
+}
+
+.table_results td.d-print-none a .icon,
+.table_results td.d-print-none a img.icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  vertical-align: middle;
+}
+
+.table_results td.d-print-none .ic_b_browse,
+.table_results td.d-print-none .ic_bd_browse {
+  color: $pma-blue;
+}
+
+.table_results td.d-print-none .ic_b_props {
+  color: $pma-indigo;
+}
+
+.table_results td.d-print-none .ic_b_select,
+.table_results td.d-print-none .ic_bd_select {
+  color: $pma-cyan;
+}
+
+.table_results td.d-print-none .ic_b_insrow,
+.table_results td.d-print-none .ic_bd_insrow {
+  color: $pma-green;
+}
+
+.table_results td.d-print-none .ic_b_empty,
+.table_results td.d-print-none .ic_bd_empty {
+  color: $pma-orange;
+}
+
+.table_results td.d-print-none .ic_b_drop,
+.table_results td.d-print-none .ic_bd_drop {
+  color: $pma-pink;
+}
+
+.table.data td.d-print-none a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  line-height: 1.2;
+}
+
+.table.data td.d-print-none .icon,
+.table.data td.d-print-none img.icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  vertical-align: middle;
+}
+
+.table.data td.d-print-none .ic_b_browse,
+.table.data td.d-print-none .ic_bd_browse {
+  color: $pma-blue;
+}
+
+.table.data td.d-print-none .ic_b_props {
+  color: $pma-indigo;
+}
+
+.table.data td.d-print-none .ic_b_select,
+.table.data td.d-print-none .ic_bd_select {
+  color: $pma-cyan;
+}
+
+.table.data td.d-print-none .ic_b_insrow,
+.table.data td.d-print-none .ic_bd_insrow {
+  color: $pma-green;
+}
+
+.table.data td.d-print-none .ic_b_empty,
+.table.data td.d-print-none .ic_bd_empty {
+  color: $pma-orange;
+}
+
+.table.data td.d-print-none .ic_b_drop,
+.table.data td.d-print-none .ic_bd_drop {
+  color: $pma-pink;
+}
+
+#structure-action-links a,
+#structure-action-links .btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+#structure-action-links .icon,
+#structure-action-links img.icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+#structure-action-links .ic_b_print { color: $pma-blue; }
+#structure-action-links .ic_eye { color: $pma-teal; }
+#structure-action-links .ic_b_move { color: $pma-orange; }
+#structure-action-links .ic_normalize { color: $pma-green; }
+#structure-action-links .ic_b_tblanalyse { color: $pma-indigo; }
+
+#tablestructure td.d-print-none a,
+#table_index td.d-print-none a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  line-height: 1.2;
+}
+
+#tablestructure td.d-print-none .icon,
+#tablestructure td.d-print-none img.icon,
+#table_index td.d-print-none .icon,
+#table_index td.d-print-none img.icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  vertical-align: middle;
+}
+
+#tablestructure .ic_b_browse,
+#tablestructure .ic_bd_browse { color: $pma-blue; }
+#tablestructure .ic_b_props { color: $pma-indigo; }
+#tablestructure .ic_b_select,
+#tablestructure .ic_bd_select { color: $pma-cyan; }
+#tablestructure .ic_b_insrow,
+#tablestructure .ic_bd_insrow { color: $pma-green; }
+#tablestructure .ic_b_empty,
+#tablestructure .ic_bd_empty { color: $pma-orange; }
+#tablestructure .ic_b_drop,
+#tablestructure .ic_bd_drop { color: $pma-pink; }
+
+#table_index .ic_b_edit { color: $pma-blue; }
+#table_index .ic_b_rename { color: $pma-indigo; }
+#table_index .ic_b_drop { color: $pma-pink; }
+
+#tablestructure .ic_b_primary,
+#tablestructure .ic_b_index,
+#tablestructure .ic_b_unique,
+#table_index .ic_b_primary,
+#table_index .ic_b_index,
+#table_index .ic_b_unique {
+  color: $pma-orange;
+}
+
+.d-print-none .mult_submit {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  line-height: 1.2;
+}
+
+.d-print-none .mult_submit .icon,
+.d-print-none .mult_submit img.icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  vertical-align: middle;
+}
+
+.d-print-none .mult_submit .ic_b_browse { color: $pma-blue; }
+.d-print-none .mult_submit .ic_b_edit { color: $pma-indigo; }
+.d-print-none .mult_submit .ic_b_drop { color: $pma-pink; }
+.d-print-none .mult_submit .ic_b_primary { color: $pma-orange; }
+.d-print-none .mult_submit .ic_b_unique { color: $pma-orange; }
+.d-print-none .mult_submit .ic_b_index { color: $pma-orange; }
+.d-print-none .mult_submit .ic_b_spatial { color: $pma-teal; }
+.d-print-none .mult_submit .ic_b_ftext { color: $pma-cyan; }
+.d-print-none .mult_submit .ic_centralColumns_add { color: $pma-green; }
+.d-print-none .mult_submit .ic_centralColumns_delete { color: $pma-pink; }
+
+.table td.tool a {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  line-height: 1.2;
+  color: $pma-link-color;
+  text-decoration: none;
+}
+
+.table td.action a,
+.table td.actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  line-height: 1.2;
+  color: $pma-link-color;
+  text-decoration: none;
+}
+
+.table td.tool .icon,
+.table td.tool img.icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+.table td.action .icon,
+.table td.action img.icon,
+.table td.actions .icon,
+.table td.actions img.icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+.table td.tool .ic_s_rights { color: $pma-indigo; }
+.table td.tool .ic_s_success { color: $pma-green; }
+.table td.tool .ic_s_cancel { color: $pma-pink; }
+
+.table td.action .ic_b_usredit,
+.table td.actions .ic_b_usredit { color: $pma-indigo; }
+.table td.action .ic_b_export,
+.table td.actions .ic_b_export { color: $pma-orange; }
+.table td.action .ic_s_lock,
+.table td.actions .ic_s_lock { color: $pma-pink; }
+.table td.action .ic_s_unlock,
+.table td.actions .ic_s_unlock { color: $pma-green; }
+
+#userRightsTable td,
+#userRightsTable th {
+  vertical-align: middle;
+}
+
+#userRightsTable td a,
+#userRightsTable td button {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+#userRightsTable .icon,
+#userRightsTable img.icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+#userRightsTable .ic_b_usredit { color: $pma-indigo; }
+#userRightsTable .ic_b_usrlist { color: $pma-teal; }
+#userRightsTable .ic_b_tblexport { color: $pma-orange; }
+#userRightsTable .ic_s_lock { color: $pma-pink; }
+#userRightsTable .ic_s_unlock { color: $pma-green; }
+
+#usersForm .mult_submit {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  line-height: 1.2;
+}
+
+#usersForm .mult_submit .icon,
+#usersForm .mult_submit img.icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+#usersForm .mult_submit .ic_b_tblexport { color: $pma-orange; }
+
+#add_user_anchor {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  text-decoration: none;
+}
+
+#add_user_anchor .icon,
+#add_user_anchor img.icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+#add_user_anchor .ic_b_usradd { color: $pma-green; }
+
+#deleteUserCard .card-header {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+#deleteUserCard .card-header .icon,
+#deleteUserCard .card-header img.icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+#deleteUserCard .ic_b_usrdrop { color: $pma-pink; }
+
+@media only screen and (min-width: 768px) {
+  .table th.position-sticky {
+    top: 96px;
+  }
+}

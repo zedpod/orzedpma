@@ -1,0 +1,20 @@
+// Modal
+
+.modal-header,
+.modal-footer {
+  background-color: $modal-cap-bg;
+  border: none;
+}
+
+.modal-dialog {
+  margin: 1.25rem auto;
+  max-height: calc(100vh - 2.5rem);
+}
+
+.modal-content {
+  max-height: calc(100vh - 2.5rem);
+}
+
+.modal-body {
+  overflow-y: auto;
+}

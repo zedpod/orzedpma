@@ -1,0 +1,2134 @@
+// stylelint-disable at-rule-empty-line-before
+// stylelint-disable scss/at-extend-no-missing-placeholder
+// Common
+
+#page_content {
+  margin: .75rem 1.25rem 1rem;
+  padding-bottom: .5rem;
+}
+
+#page_content > .card,
+#page_content > .pma-fieldset,
+#page_content > .table-responsive {
+  margin-bottom: 1rem;
+}
+
+#navbarDropdown > img {
+  display: none;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .45rem;
+  line-height: 1.2;
+}
+
+h2 .text-nowrap {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+h2 .icon,
+h2 img.icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  color: currentColor;
+  align-self: center;
+}
+
+h2 a {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+h2 .ic_s_db { color: $pma-indigo; }
+h2 .ic_b_newdb { color: $pma-pink; }
+h2 .ic_b_usrlist { color: $pma-teal; }
+h2 .ic_b_export { color: $pma-orange; }
+h2 .ic_b_import { color: $pma-green; }
+h2 .ic_b_sql { color: $pma-cyan; }
+h2 .ic_b_search { color: $pma-blue; }
+h2 .ic_b_props { color: $pma-orange; }
+h2 .ic_b_events { color: $pma-teal; }
+h2 .ic_b_triggers { color: $pma-orange; }
+h2 .ic_b_routines { color: $pma-indigo; }
+h2 .ic_b_engine { color: $pma-green; }
+h2 .ic_s_status { color: $pma-green; }
+h2 .ic_b_chart { color: $pma-cyan; }
+
+#page_content .ic_b_usredit { color: $pma-indigo; }
+#page_content .ic_b_export { color: $pma-orange; }
+#page_content .ic_b_usradd { color: $pma-green; }
+#page_content .ic_b_usrdrop { color: $pma-pink; }
+#page_content .ic_s_lock { color: $pma-pink; }
+#page_content .ic_s_unlock { color: $pma-green; }
+
+.pma-fieldset {
+  padding: .5em;
+  margin-top: 1em;
+  background: $pma-component-bg;
+  border: 1px solid $pma-border-color;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 8px 20px rgba($black, .2);
+
+  .pma-fieldset {
+    margin: .8em;
+    background: shade-color($pma-component-bg, 24%);
+    border: 1px solid $pma-border-color;
+
+    &.column_details {
+      padding-top: 2rem;
+    }
+  }
+
+  legend {
+    float: none;
+    width: initial;
+    max-width: 100%;
+    padding: 5px 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: $body-color;
+    background-color: $body-bg;
+    border: 1px solid $pma-border-color;
+    border-radius: 2px;
+  }
+
+  a {
+    color: $pma-link-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      text-underline-offset: .18em;
+    }
+  }
+
+  select {
+    // see forms.scss
+    display: inline-block;
+    width: auto;
+  }
+
+  input {
+    // see forms.scss
+  }
+
+  &.tblFooters {
+    float: none;
+    clear: both;
+    margin-top: 0;
+    margin-bottom: .5em;
+    text-align: right;
+    // avoid a thick line since this should be used under another fieldset
+    border-top: 0;
+    border-radius: 0 0 4px 4px;
+  }
+}
+
+// 3.4
+.datatable {
+  table-layout: fixed;
+}
+
+// Classes
+.clearfloat {
+  clear: both;
+}
+
+.paddingtop {
+  padding-top: 1em;
+}
+
+.separator {
+  color: $body-color;
+}
+
+div.tools {
+  float: none;
+  clear: both;
+  padding: .2em;
+  margin-top: 0;
+  margin-bottom: .5em;
+  font-weight: normal;
+  color: $body-color;
+  text-align: right;
+  background: $pma-component-bg;
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
+
+  a {
+    &:link,
+    &:active,
+    &:visited {
+      color: $pma-link-color;
+    }
+
+    &:hover {
+      color: $pma-link-hover-color;
+    }
+  }
+}
+
+div.null_div {
+  min-width: 50px;
+  height: 20px;
+  font-style: normal;
+  text-align: center;
+}
+
+.pma-fieldset {
+  .formelement {
+    float: left;
+    margin-right: .5em;
+    // IE
+    white-space: nowrap;
+  }
+
+  // revert for Gecko
+  div[class=formelement] {
+    white-space: normal;
+  }
+}
+
+// marks table rows/cells if the db field is in a where condition
+.condition {
+  border-color: $pma-cond-border-color !important;
+}
+
+th.condition {
+  border-style: solid;
+  border-width: 1px 1px 0 1px;
+}
+
+td.condition {
+  border-style: solid;
+  border-width: 0 1px 0 1px;
+}
+
+tr:last-child td.condition {
+  border-width: 0 1px 1px 1px;
+}
+
+// rtl:begin:remove
+.before-condition {
+  // for first th which must have right border set (ltr only)
+  border-right: 1px solid $pma-cond-border-color;
+}
+// rtl:end:remove
+
+// cells with the value NULL
+td.null {
+  color: #394653 !important;
+}
+
+table {
+  .valueHeader,
+  .value {
+    text-align: right;
+    white-space: normal;
+  }
+}
+
+.value {
+  font-family: $font-family-monospace;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    text-underline-offset: .18em;
+  }
+}
+
+img.lightbulb {
+  cursor: pointer;
+}
+
+.pdflayout {
+  position: relative;
+  display: none;
+  overflow: hidden;
+  background-color: $white;
+  border: 1px solid $black;
+  clip: inherit;
+}
+
+.pdflayout_table {
+  position: absolute;
+  z-index: 2;
+  display: inline;
+  visibility: inherit;
+  overflow: hidden;
+  font-size: 80%;
+  color: $black;
+  cursor: move;
+  background: #d3dce3;
+  border: 1px dashed $black;
+  clip: inherit;
+}
+
+// Doc links in SQL
+.cm-sql-doc {
+  color: inherit !important;
+}
+
+// no extra space in table cells
+td .icon {
+  image-rendering: pixelated;
+}
+
+.selectallarrow {
+  margin-right: .3em;
+  margin-left: .6em;
+}
+
+.with-selected {
+  margin-left: 2em;
+}
+
+#tablesForm {
+  input.checkall_box {
+    margin-top: .65rem;
+  }
+
+  select {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+// Server > Binary log
+#binlogTable {
+  td a {
+    text-decoration: none;
+  }
+}
+
+// Database > SQL Form
+#sqlqueryform {
+  padding-right: .75rem;
+  padding-left: .75rem;
+  margin-top: 1rem;
+}
+
+// Database > Export table
+.export_table_select {
+  @extend .table-light;
+}
+
+// Database > Operations
+#formDatabaseComment {
+  display: block;
+  margin-top: 1rem;
+}
+
+// Table > Operations
+#moveTableForm {
+  margin-top: 1rem;
+}
+
+// message boxes: error, confirmation
+#pma_errors,
+#pma_demo,
+#pma_footer {
+  position: relative;
+  padding: 0 .5em;
+}
+
+.confirmation {
+  color: $pma-confirmation-color;
+  background-color: $pma-confirmation-bg;
+
+  code {
+    color: $pma-confirmation-color;
+  }
+}
+// end messageboxes
+
+.new_central_col {
+  width: 100%;
+}
+
+.tblcomment {
+  font-size: 70%;
+  font-weight: normal;
+  color: $text-muted;
+}
+
+.tblHeaders {
+  font-weight: bold;
+}
+
+.tblFooters {
+  font-weight: normal;
+}
+
+.tblHeaders,
+.tblFooters {
+  color: $body-color;
+  background: darken($pma-component-bg, 5%);
+
+  a {
+    &:link,
+    &:active,
+    &:visited {
+      color: $pma-link-color;
+    }
+
+    &:hover {
+      color: $pma-link-hover-color;
+    }
+  }
+}
+
+.error {
+  padding: 1px 2px;
+  margin-left: 2px;
+  color: $black;
+  background: pink;
+  border: 1px solid maroon !important;
+}
+
+// disabled text
+.disabled {
+  color: $pma-disable-color;
+
+  a {
+    &:link,
+    &:active,
+    &:visited {
+      color: $pma-disable-color;
+    }
+
+    &:hover {
+      color: $pma-disable-color;
+      text-decoration: none;
+    }
+  }
+}
+
+tr.disabled td,
+td.disabled {
+  color: $pma-disable-color;
+  background-color: $pma-component-bg;
+}
+
+.pre_wrap {
+  white-space: pre-wrap;
+
+  br {
+    display: none;
+  }
+}
+
+// Login form
+body#loginform {
+  margin: 1em 0 0 0;
+  text-align: center;
+
+  h1,
+  a.logo {
+    display: block;
+    text-align: center;
+  }
+
+  div.container {
+    width: 30em;
+    margin: 0 auto;
+    text-align: left;
+  }
+}
+
+div.container.modal_form {
+  z-index: 999;
+  width: 30em;
+  margin: 0 auto;
+  text-align: center;
+  background: $modal-content-bg;
+}
+
+div#modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+  height: 100%;
+  background: $modal-content-bg;
+}
+
+label.col-3.d-flex.align-items-center {
+  font-weight: bolder;
+}
+
+.commented_column {
+  border-bottom: 1px dashed $pma-border-color;
+}
+
+.column_attribute {
+  font-size: 70%;
+}
+
+.column_name {
+  margin: 5px 2px;
+  font-size: 80%;
+}
+
+.message_errors_found {
+  margin-top: 20px;
+}
+
+.repl_gui_skip_err_cnt {
+  width: 30px;
+}
+
+.color_gray {
+  color: gray;
+}
+
+.max_height_400 {
+  max-height: 400px;
+}
+
+li.last.database {
+  // Avoid having the last item of the tree hidden behind the scroll bar
+  margin-bottom: 15px !important;
+}
+
+// zoom search
+div#dataDisplay {
+  input,
+  select {
+    margin: 0;
+    margin-right: .5em;
+  }
+
+  th {
+    line-height: 2em;
+  }
+}
+
+img.calendar {
+  border: none;
+}
+
+form.clock {
+  text-align: center;
+}
+
+// table stats
+div#tablestatistics table {
+  float: left;
+  min-width: 16em;
+  margin-top: .5em;
+  margin-right: 1.5em;
+  margin-bottom: .5em;
+}
+// end table stats
+
+// Heading
+#topmenucontainer {
+  width: 100%;
+
+  .dropdown-toggle {
+    &::after {
+      color: $pma-link-color;
+    }
+  }
+}
+
+#page_nav_icons {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  height: 2.5rem;
+  padding: $breadcrumb-navbar-padding;
+  background-color: $pma-body-bg;
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+#page_settings_icon {
+  display: none;
+  cursor: pointer;
+}
+
+#page_settings_modal,
+#pma_navigation_settings {
+  display: none;
+}
+
+#textSQLDUMP {
+  width: 95%;
+  height: 95%;
+  font-family: Consolas, "Courier New", Courier, monospace;
+  font-size: 110%;
+}
+
+#TooltipContainer {
+  position: absolute;
+  z-index: 99;
+  visibility: hidden;
+  width: 20em;
+  height: auto;
+  padding: .5em;
+  overflow: visible;
+  color: #060;
+  background-color: $pma-component-bg;
+  border: .1em solid $pma-border-color;
+}
+
+// User privileges
+#fieldset_add_user_login {
+  div.item {
+    display: flex;
+    align-items: center;
+    padding-bottom: .3em;
+    margin-bottom: .3em;
+    border-bottom: 1px solid silver;
+  }
+
+  label {
+    float: left;
+    display: block;
+    width: 10em;
+    max-width: 100%;
+    padding-right: .5em;
+    margin-bottom: 0;
+    text-align: right;
+  }
+
+  input {
+    clear: right;
+    width: 12em;
+    max-width: 100%;
+  }
+
+  span {
+    &.options {
+      float: left;
+      display: block;
+      width: 12em;
+      max-width: 100%;
+      padding-right: .5em;
+
+      #select_pred_username,
+      #select_pred_hostname,
+      #select_pred_password {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      input {
+        width: auto;
+      }
+    }
+
+    &:not(.options) {
+      padding-right: .5em;
+      padding-left: .5em;
+    }
+  }
+}
+
+#fieldset_user_priv div.item {
+  float: left;
+  width: 9em;
+  max-width: 100%;
+
+  div.item {
+    float: none;
+  }
+
+  label {
+    white-space: nowrap;
+  }
+
+  select {
+    width: 100%;
+  }
+}
+
+#fieldset_user_global_rights .pma-fieldset,
+#fieldset_user_group_rights .pma-fieldset {
+  float: left;
+}
+
+#fieldset_user_global_rights > legend input {
+  margin-left: 2em;
+}
+// end user privileges
+
+// Server status
+.linkElem:hover {
+  color: #235a81;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+h3#serverstatusqueries span {
+  display: inline;
+  font-size: 60%;
+}
+
+div#serverStatusTabs {
+  margin-top: 1em;
+}
+
+caption a.top {
+  float: right;
+}
+
+div#serverstatusquerieschart {
+  float: left;
+  width: 500px;
+  height: 350px;
+  margin-right: 50px;
+}
+
+div {
+  &#serverstatus table {
+    tbody td.descr,
+    .tblFooters {
+      a {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &.liveChart {
+    clear: both;
+    min-width: 500px;
+    height: 400px;
+    padding-bottom: 80px;
+  }
+}
+
+div#chartVariableSettings {
+  margin-left: 10px;
+  background-color: #e6e6e6;
+  border: 1px solid #ddd;
+}
+
+table#chartGrid {
+  td {
+    padding: 3px;
+    margin: 0;
+  }
+
+  div.monitorChart {
+    min-width: 1px;
+    background: $pma-component-bg;
+    border: none;
+  }
+
+  .float-start {
+    margin-right: .5rem;
+    line-height: 1;
+  }
+}
+
+div.tabLinks {
+  float: left;
+  padding: 5px 0;
+
+  a,
+  label {
+    margin-right: 7px;
+  }
+
+  .icon {
+    margin: -.2em .3em 0 0;
+  }
+
+  .refreshRate {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+.popupContent {
+  position: absolute;
+  z-index: 2;
+  display: none;
+  padding: 3px;
+  margin: 0;
+  background-color: $body-bg;
+  border: 1px solid $pma-border-color;
+  box-shadow: 2px 2px 3px $pma-border-color;
+
+  .float-start > select {
+    display: inline-block;
+  }
+}
+
+div {
+  &#logTable {
+    clear: both;
+    padding-top: 10px;
+
+    table {
+      width: 100%;
+    }
+  }
+
+  &#queryAnalyzerDialog {
+    min-width: 700px;
+
+    div {
+      &.CodeMirror-scroll {
+        height: auto;
+      }
+
+      &#queryProfiling {
+        height: 300px;
+      }
+    }
+
+    td.explain {
+      width: 250px;
+    }
+
+    table.queryNums {
+      display: none;
+      text-align: left;
+      border: 0;
+    }
+  }
+}
+
+.smallIndent {
+  padding-left: 7px;
+}
+// end serverstatus
+
+// profiling
+div#profilingchart {
+  float: left;
+  width: 850px;
+  height: 370px;
+}
+
+#profilingchart .jqplot-highlighter-tooltip {
+  top: auto !important;
+  bottom: 24px;
+  left: 11px;
+}
+// end profiling
+
+// table charting
+#resizer {
+  border: 1px solid silver;
+}
+
+// make room for the resize handle
+#inner-resizer {
+  padding: 10px;
+}
+
+// querybox
+#togglequerybox {
+  margin: 0 10px;
+}
+
+#serverstatus h3 {
+  margin: 15px 0;
+  font-size: 1.7em;
+  font-weight: normal;
+  color: #999;
+}
+
+textarea {
+  &#sqlquery {
+    width: 100%;
+    padding: 5px;
+    font-family: inherit;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+  }
+
+  &#sql_query_edit {
+    display: block;
+    width: 95%;
+    height: 7em;
+  }
+}
+
+select#fieldsSelect,
+textarea#sqlquery {
+  height: 20rem;
+}
+// end querybox
+
+// main page
+#mysqlmaininformation,
+#pmamaininformation {
+  float: left;
+  width: 49%;
+}
+
+#maincontainer {
+  ul {
+    vertical-align: middle;
+    list-style-type: disc;
+  }
+
+  li {
+    margin-bottom: .3em;
+  }
+}
+
+#full_name_layer {
+  position: absolute;
+  z-index: 801;
+  padding: 2px;
+  margin-top: -3px;
+  background: $body-bg;
+  border: solid 1px $pma-border-color;
+  border-radius: 3px;
+}
+
+#body_browse_foreigners {
+  margin: .5em .5em 0 .5em;
+  background: $pma-component-bg;
+}
+
+#bodythemes {
+  width: 500px;
+  margin: auto;
+  text-align: center;
+
+  img {
+    border: .1em solid $black;
+  }
+
+  a:hover img {
+    border: .1em solid red;
+  }
+}
+
+#selflink {
+  clear: both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 98%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1%;
+  text-align: center;
+  border-top: .1rem solid $selflink-border-color;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding-top: .6rem;
+    color: $pma-gray-300;
+    text-decoration: none;
+
+    img,
+    .icon {
+      display: none;
+    }
+
+    &::before {
+      content: "phpMyAdmin \2022";
+      font-weight: 300;
+      letter-spacing: .03em;
+    }
+
+    &::after {
+      content: "ORZED";
+      font-weight: 400;
+      letter-spacing: .07em;
+      color: $pma-gray-500;
+    }
+  }
+}
+
+#qbe_div_table_list,
+#qbe_div_sql_query {
+  float: left;
+}
+
+code {
+  font-size: 1em;
+
+  &.php {
+    display: block;
+    max-height: 10em;
+    padding-left: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: auto;
+    direction: ltr;
+  }
+
+  &.sql {
+    display: block;
+    max-height: 10em;
+    padding: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: auto;
+    direction: ltr;
+  }
+}
+
+div.sqlvalidate {
+  display: block;
+  max-height: 10em;
+  padding: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: auto;
+  direction: ltr;
+}
+
+.result_query {
+  margin-top: 1em;
+
+  .sqlOuter {
+    text-align: left;
+    background: darken($pma-component-bg, 2%);
+  }
+}
+
+#PMA_slidingMessage code.sql,
+div.sqlvalidate {
+  background: darken($pma-component-bg, 2%);
+}
+
+textarea#partitiondefinition {
+  height: 3em;
+}
+
+// for elements that should be revealed only via js
+.hide {
+  display: none;
+}
+
+#list_server {
+  padding: 0;
+  list-style-type: none;
+}
+
+// Progress bar styles
+div {
+  &.upload_progress {
+    width: 400px;
+    margin: 3em auto;
+    text-align: center;
+  }
+
+  &.upload_progress_bar_outer {
+    position: relative;
+    width: 202px;
+    margin: 0 auto 1em;
+    color: $body-color;
+    border: 1px solid $black;
+
+    div.percentage {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 202px;
+    }
+  }
+
+  &.upload_progress_bar_inner {
+    position: relative;
+    width: 0;
+    height: 12px;
+    margin: 1px;
+    overflow: hidden;
+    color: $black;
+    background-color: #ddd;
+
+    div.percentage {
+      top: -1px;
+      left: -1px;
+    }
+  }
+
+  &#statustext {
+    margin-top: .5em;
+  }
+}
+
+table {
+  &#serverconnection_src_remote,
+  &#serverconnection_trg_remote,
+  &#serverconnection_src_local,
+  &#serverconnection_trg_local {
+    float: left;
+  }
+}
+
+// Ajax notification styling
+#loading_parent {
+  // Need this parent to properly center the notification division
+  position: relative;
+  width: 100%;
+}
+
+.ajax_notification {
+  // The notification needs to be shown on the top of the page
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1100;
+  display: inline;
+  width: $pma-ajax-width;
+  padding: $pma-ajax-spacer;
+  margin: 200px auto 0;
+  color: $pma-ajax-color;
+  text-align: center;
+  background-color: $pma-ajax-bg;
+  background-repeat: no-repeat;
+  background-position: $pma-ajax-spacer;
+  background-size: $pma-ajax-bg-zise;
+  border: $alert-border-width solid $pma-ajax-border-color;
+  border-radius: 5px;
+  box-shadow: 0 5px 90px $pma-ajax-shadow-color;
+
+  @extend .ic_ajax_spinner;
+}
+
+#popup_background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: $black;
+}
+
+#tablestructure tbody label {
+  margin: .3rem 0;
+}
+
+#structure-action-links a {
+  margin-right: 1em;
+  color: $pma-link-color;
+}
+
+#addColumns {
+  display: block;
+  margin-top: 1em;
+
+  input[type=radio] {
+    margin: 3px 0 0;
+    margin-left: 1em;
+  }
+
+  select {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+// Indexes
+#index_frm {
+  .index_info {
+    input[type=text],
+    select {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0;
+    }
+
+    div {
+      padding: .2em 0;
+    }
+
+    .label {
+      float: left;
+      min-width: 12em;
+    }
+  }
+
+  .slider {
+    float: left;
+    width: 10em;
+    margin: .6em;
+  }
+
+  .add_fields {
+    float: left;
+
+    input {
+      margin-left: 1em;
+    }
+  }
+
+  input {
+    margin: 0;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+}
+
+table#index_columns {
+  width: 100%;
+
+  select {
+    float: left;
+    width: 85%;
+  }
+}
+
+#move_columns_dialog {
+  div {
+    padding: 1em;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  li {
+    padding: .2em;
+    margin: .4em;
+    font-weight: bold;
+    color: $black;
+    background: #d3dce3;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+  }
+}
+
+.click-hide-message {
+  cursor: pointer;
+}
+
+#prefs_autoload {
+  margin-bottom: .5em;
+  margin-left: .5em;
+}
+
+input#auto_increment_opt {
+  width: min-content;
+}
+
+#placeholder {
+  position: relative;
+  float: right;
+  width: 450px;
+  height: 300px;
+  overflow: hidden;
+  border: 1px solid #aaa;
+
+  .button {
+    position: absolute;
+    cursor: pointer;
+  }
+
+  div.button {
+    padding: 2px;
+    font-size: smaller;
+    color: #999;
+    background-color: #eee;
+  }
+}
+
+.wrapper {
+  float: left;
+  margin-bottom: 1.5em;
+}
+
+.toggleButton {
+  position: relative;
+  height: 1.55em;
+  overflow: hidden;
+  font-size: .8em;
+  line-height: 1.4em;
+  text-align: center;
+  cursor: pointer;
+  border-right: .1em solid #888;
+  border-left: .1em solid #888;
+  border-radius: .3em;
+
+  table,
+  td,
+  img {
+    position: relative;
+    padding: 0;
+  }
+
+  .container {
+    position: absolute;
+
+    td,
+    tr {
+      background: none !important;
+    }
+  }
+
+  .toggleOn {
+    padding: 0 1em;
+    color: $body-color;
+    text-shadow: 0 0 .2em $black;
+  }
+
+  .toggleOff {
+    padding: 0 1em;
+  }
+}
+
+.doubleFieldset {
+  .pma-fieldset {
+    float: left;
+    width: 48%;
+    padding: 0;
+  }
+
+  legend {
+    margin-left: 1.5em;
+  }
+
+  div.wrap {
+    padding: 1.5em;
+  }
+}
+
+.create_table_form {
+  background-color: $pma-component-bg;
+}
+
+#table_name_col_no_outer {
+  margin-top: 87px;
+}
+
+#table_name_col_no {
+  position: fixed;
+  top: 111px !important;
+  width: auto;
+}
+
+#table_columns {
+  display: block;
+  overflow: auto;
+
+  input {
+    &[type=text],
+    &[type=password],
+    &[type=number] {
+      box-sizing: border-box;
+      width: 10em;
+    }
+  }
+
+  select {
+    box-sizing: border-box;
+    width: 10em;
+  }
+
+  caption {
+    padding-left: .5rem;
+  }
+}
+
+#openlayersmap {
+  width: 450px;
+  height: 300px;
+}
+
+.placeholderDrag {
+  cursor: move;
+}
+
+#left_arrow {
+  top: 26px;
+  left: 8px;
+}
+
+#right_arrow {
+  top: 26px;
+  left: 26px;
+}
+
+#up_arrow {
+  top: 8px;
+  left: 17px;
+}
+
+#down_arrow {
+  top: 44px;
+  left: 17px;
+}
+
+#zoom_in {
+  top: 67px;
+  left: 17px;
+}
+
+#zoom_world {
+  top: 85px;
+  left: 17px;
+}
+
+#zoom_out {
+  top: 103px;
+  left: 17px;
+}
+
+.colborder {
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  margin-left: -6px;
+  cursor: col-resize;
+}
+
+.colborder_active {
+  border-right: 2px solid #a44;
+}
+
+.pma_table {
+  th.draggable {
+    span {
+      display: block;
+      margin-right: 10px;
+      overflow: hidden;
+    }
+  }
+
+  td {
+    position: relative;
+    z-index: -2;
+  }
+
+  tbody td span {
+    display: block;
+    overflow: hidden;
+
+    code span {
+      display: inline;
+    }
+  }
+}
+
+.modal-copy input {
+  display: block;
+  width: 100%;
+  padding: .3em 0;
+  margin-top: 1.5em;
+}
+
+// Column visibility
+.cRsz {
+  position: absolute;
+}
+
+.cCpy {
+  position: absolute;
+  padding: .3em;
+  margin: .1em;
+  font-weight: bold;
+  color: $white;
+  text-shadow: -1px -1px $black;
+  background: #333;
+  border-radius: .3em;
+  box-shadow: 0 0 .7em $black;
+}
+
+.cPointer {
+  $height: 20px;
+  $width: 10px;
+  position: absolute;
+  width: $width;
+
+  height: $height;
+  margin-top: $height * -.5;
+  margin-left: $width * -.5;
+  background: url("../img/col_pointer.png");
+}
+
+.tooltip {
+  z-index: 9999;
+  padding: 3px 5px !important;
+  font-size: .8em !important;
+  font-weight: bold !important;
+  text-shadow: -1px -1px $black !important;
+  background: #333 !important;
+  border: 1px solid $black !important;
+  border-radius: .3em !important;
+  box-shadow: none !important;
+  opacity: .9 !important;
+
+  * {
+    color: $white !important;
+    background: none !important;
+  }
+}
+
+.cDrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5001;
+}
+
+.coldrop {
+  width: 16px;
+  height: 16px;
+  margin-top: .5em;
+  cursor: pointer;
+  @extend .ic_b_more;
+
+  &:hover {
+    background-color: $pma-component-hover-bg;
+  }
+}
+
+.coldrop-hover {
+  background-color: $pma-component-hover-bg;
+}
+
+.cList {
+  position: absolute;
+  right: auto;
+  z-index: 5000;
+  overflow-wrap: break-word;
+  background: $pma-component-bg;
+  border: 1px solid $pma-border-color;
+  box-shadow: 0 .3em .7em #100f12d6;
+  min-width: 420px;
+  left: 0;
+  margin-top: 15px;
+
+  .lDiv div {
+    padding: .2em .5em;
+
+    &:hover {
+      cursor: pointer;
+      background: $pma-component-hover-bg;
+    }
+
+    input {
+      cursor: pointer;
+    }
+  }
+}
+
+.showAllColBtn {
+  padding: .35em 1em;
+  font-size: .9em;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border-top: 1px solid $pma-border-color;
+  border-bottom: 1px solid $pma-border-color;
+
+  &:hover {
+    background: $pma-component-hover-bg;
+  }
+}
+
+.turnOffSelect {
+  user-select: none;
+}
+
+// Table navigation
+.navigation {
+  margin: .8em 0;
+  background: $pma-component-bg;
+  border-radius: 5px;
+
+  tr {
+    padding: .5rem 0;
+  }
+
+  td {
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  input {
+    &[type=text] {
+      margin: 0 .8em;
+    }
+
+    &[type=submit]:not(.btn-primary) {
+      background: none;
+      border: none;
+
+      &:hover {
+        color: $pma-link-color;
+        cursor: pointer;
+      }
+    }
+
+    &.edit_mode_active {
+      color: $body-color;
+      text-shadow: none;
+      cursor: pointer;
+      background: linear-gradient(#333, #555);
+    }
+  }
+
+  .btn-link {
+    color: $body-color;
+
+    &:hover {
+      color: $body-color;
+      text-decoration: none;
+      background-image: linear-gradient(#333, #555);
+    }
+  }
+
+  select {
+    display: inline-block;
+    width: auto;
+    margin: 0 .8em;
+  }
+}
+
+.navigation_separator {
+  display: inline-block;
+  width: .5em;
+  height: 3em;
+
+  &:last-child {
+    width: 0;
+  }
+}
+
+div.navigation_separator {
+  width: 0;
+  margin: 0 1em;
+  line-height: 3;
+}
+
+.central_columns_navigation {
+  padding: 1rem !important;
+
+  select {
+    display: block;
+    width: 100%;
+    margin: .8em 0;
+  }
+}
+// end Table navigation
+
+.cEdit {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+
+  input[type=text] {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: $pma-component-bg;
+  }
+
+  input {
+    @extend .form-control;
+  }
+
+  .edit_area {
+    min-width: 10em;
+    padding: .3em .5em;
+    background: $pma-component-bg;
+    border: 1px solid $pma-border-color;
+  }
+
+  .cell_edit_hint {
+    margin: .3em .2em;
+    font-size: .8em;
+  }
+
+  .edit_box {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .edit_box_posting {
+    padding-right: 1.5rem;
+    background-color: $pma-component-bg;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: $pma-ajax-bg-zise;
+    @extend .ic_ajax_spinner;
+  }
+
+  .edit_area_loading {
+    height: 6rem;
+    background-color: $pma-component-bg;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $pma-ajax-bg-zise;
+    border: 1px solid #6c757d;
+    @extend .ic_ajax_spinner;
+  }
+
+  .goto_link {
+    padding: .2em .3em;
+
+    a {
+      color: $pma-link-color;
+    }
+  }
+}
+
+.saving_edited_data {
+  padding-left: 20px;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: $pma-ajax-bg-zise;
+  @extend .ic_ajax_spinner;
+}
+
+.relationalTable {
+  td {
+    vertical-align: top;
+  }
+
+  select {
+    width: 125px;
+    margin-right: 5px;
+  }
+}
+
+// over-riding jqplot-yaxis class
+.jqplot-yaxis {
+  left: 0 !important;
+  width: auto;
+  min-width: 25px;
+}
+
+.jqplot-axis {
+  overflow: hidden;
+}
+
+div#page_content div {
+  &#tableslistcontainer {
+    margin-top: .5rem;
+
+    .pageselector:first-child {
+      margin-bottom: .5rem;
+    }
+
+    .pageselector:last-child {
+      margin-top: .5rem;
+    }
+
+    .pageselector {
+      form {
+        // see navigation.scss
+        select.pageselector {
+          margin: 0 .4rem;
+        }
+      }
+
+      a {
+        padding: 0 .4rem .5rem;
+        font-size: 1.5rem;
+        text-decoration: none;
+
+        &:hover {
+          color: $pma-link-color;
+        }
+      }
+    }
+  }
+}
+
+table.show_create {
+  margin-top: 1em;
+
+  td {
+    border-right: 1px solid #bbb;
+  }
+}
+
+#alias_modal {
+  table {
+    width: 100%;
+  }
+
+  label {
+    font-weight: bold;
+  }
+}
+
+.small_font {
+  font-size: smaller;
+}
+
+// Import
+#importmain {
+  .form-label {
+    padding-right: .5rem;
+  }
+
+  .form-control,
+  .form-select {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+#importFileTab {
+  width: fit-content;
+  background-color: #212329;
+  border-radius: .25rem;
+
+  .nav-item:first-child {
+    .nav-link {
+      border-radius: .25rem 0 0 .25rem;
+    }
+  }
+
+  .nav-item:last-child {
+    .nav-link {
+      border-radius: 0 .25rem .25rem 0;
+    }
+  }
+}
+
+// PMA drop-import style
+.pma_drop_handler {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding-top: 20%;
+  font-size: 30pt;
+  color: $pma-link-color;
+  text-align: center;
+  background: rgba($pma-body-bg, .8);
+}
+
+.pma_sql_import_status {
+  position: fixed;
+  right: 25px;
+  bottom: 0;
+  display: none;
+  width: 400px;
+  background: $pma-component-bg;
+  border: 1px solid rgba($pma-body-bg, .5);
+  border-radius: .25rem .25rem 0 0;
+
+  h2 {
+    padding: .5rem 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: $white;
+    background-color: rgba($pma-body-bg, .5);
+
+    .minimize {
+      margin-right: .5rem;
+    }
+
+    .close {
+      display: none;
+    }
+
+    .minimize,
+    .close {
+      float: right;
+      padding: 0 .5rem;
+    }
+
+    .minimize:hover,
+    .close:hover {
+      cursor: pointer;
+      background: rgba($pma-component-hover-bg, .8);
+    }
+  }
+
+  div {
+    height: 270px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    list-style-type: none;
+
+    li {
+      padding: 8px 10px;
+      color: $pma-green;
+      background: rgba($pma-body-bg, .15);
+      border-bottom: 1px solid rgba($pma-body-bg, .5);
+
+      .filesize {
+        float: right;
+      }
+    }
+  }
+}
+
+.pma_drop_result {
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  z-index: 800;
+  width: 60%;
+  min-height: 300px;
+  cursor: move;
+  background: $pma-component-bg;
+  border-radius: .5rem;
+
+  h2 {
+    padding: .5rem 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: $white;
+    background-color: rgba($pma-body-bg, .5);
+
+    .close {
+      float: right;
+      padding: 0 .5rem;
+
+      &:hover {
+        cursor: pointer;
+        background: rgba($pma-component-hover-bg, .8);
+      }
+    }
+  }
+}
+
+.pma_drop_file_status {
+  color: $pma-teal;
+
+  span.underline:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+// end PMA drop-import
+
+.dependencies_box {
+  background-color: white;
+  border: 3px ridge black;
+}
+
+#composite_index_list {
+  list-style-position: inside;
+  list-style-type: none;
+}
+
+span.drag_icon {
+  display: inline-block;
+  width: 1em;
+  height: 3em;
+  cursor: move;
+  background-image: url("../img/s_sortable.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.topmargin {
+  margin-top: 1em;
+}
+
+meter {
+  &[value="1"]::-webkit-meter-optimum-value {
+    background: linear-gradient(white 3%, #e32929 5%, transparent 10%, #e32929);
+  }
+
+  &[value="2"]::-webkit-meter-optimum-value {
+    background: linear-gradient(white 3%, #f60 5%, transparent 10%, #f60);
+  }
+
+  &[value="3"]::-webkit-meter-optimum-value {
+    background: linear-gradient(white 3%, #ffd700 5%, transparent 10%, #ffd700);
+  }
+}
+
+// styles for sortable tables created with tablesorter jquery plugin
+th {
+  &.header {
+    color: #235a81;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    .sorticon {
+      float: right;
+      display: inline-table;
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+      background-repeat: no-repeat;
+      background-position: right center;
+    }
+  }
+
+  &.headerSortUp .sorticon {
+    @extend .ic_s_desc;
+  }
+
+  &.headerSortDown {
+    &:hover .sorticon {
+      @extend .ic_s_desc;
+    }
+
+    .sorticon {
+      @extend .ic_s_asc;
+    }
+  }
+
+  &.headerSortUp:hover .sorticon {
+    @extend .ic_s_asc;
+  }
+}
+// end of styles of sortable tables
+
+// templates/database/multi_table_query
+.multi_table_query_form {
+  .query-form__tr--hide {
+    display: none;
+  }
+
+  .query-form__fieldset--inline,
+  .query-form__select--inline {
+    display: inline;
+  }
+
+  .query-form__tr--bg-none {
+    background: none;
+  }
+
+  .query-form__input--wide {
+    width: 91%;
+  }
+
+  .query-form__multi-sql-query {
+    float: left;
+  }
+}
+
+// templates/database/designer
+// side menu
+#name-panel {
+  overflow: hidden;
+}
+
+// Enable scrollable blocks of code
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+
+@media only screen and (max-width: 768px) {
+  .responsivetable {
+    overflow-x: auto;
+  }
+
+  body#loginform div.container {
+    width: 100%;
+  }
+
+  .largescreenonly {
+    display: none;
+  }
+
+  .width96 {
+    width: 96% !important;
+  }
+
+  #page_nav_icons {
+    display: none;
+  }
+
+  #table_name_col_no {
+    top: 62px;
+  }
+
+  .tdblock tr td {
+    display: block;
+  }
+
+  #table_columns {
+    margin-top: 60px;
+
+    .tablesorter {
+      min-width: 100%;
+    }
+  }
+
+  .doubleFieldset .pma-fieldset {
+    width: 98%;
+  }
+
+  div#serverstatusquerieschart {
+    width: 100%;
+    height: 450px;
+  }
+}
+
+#tooltip_editor {
+  padding: 5px;
+  font-size: 12px;
+  background-color: $white;
+  opacity: .95;
+  filter: alpha(opacity=95);
+}
+
+#tooltip_font {
+  font-weight: bold;
+}
+
+#selection_box {
+  position: absolute;
+  z-index: 1000;
+  height: 205px;
+  pointer-events: none;
+  background-color: #87ceeb;
+  opacity: .4;
+  filter: alpha(opacity=40);
+}
+
+#filterQueryText {
+  vertical-align: baseline;
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@include media-breakpoint-up(xl) {
+  div.tools {
+    text-align: left;
+  }
+
+  .pma-fieldset.tblFooters,
+  .tblFooters {
+    text-align: left;
+  }
+}
+
+.resize-vertical {
+  resize: vertical;
+}

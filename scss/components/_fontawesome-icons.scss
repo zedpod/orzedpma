@@ -1,0 +1,254 @@
+// Font Awesome icon overrides for phpMyAdmin icon classes.
+// Uses local SVGs for full offline support.
+
+$fa-svg-path-solid: "../svgs/solid";
+$fa-svg-path-regular: "../svgs/regular";
+
+@mixin fa-mask($icon, $style: solid) {
+  $path: if($style == regular, $fa-svg-path-regular, $fa-svg-path-solid);
+  background-image: none;
+  background-color: currentColor;
+  -webkit-mask: url("#{$path}/#{$icon}.svg") no-repeat center / 1em 1em;
+  mask: url("#{$path}/#{$icon}.svg") no-repeat center / 1em 1em;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  object-fit: contain;
+  vertical-align: text-bottom;
+}
+
+img.icon {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1em 1em;
+}
+
+@keyframes orzed-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Solid icons
+$fa-icons-solid: (
+  "ajax_spinner": "spinner",
+  "ajax_clock_small": "spinner",
+  "ajax_clock_small_gif": "spinner",
+  "b_bookmark": "bookmark",
+  "b_browse": "table",
+  "b_calendar": "calendar-days",
+  "b_column_add": "square-plus",
+  "b_chart": "chart-column",
+  "b_close": "xmark",
+  "b_comment": "comment",
+  "b_dbstatistics": "chart-pie",
+  "b_deltbl": "table-xmark",
+  "b_docs": "book-open",
+  "b_docsql": "file-code",
+  "b_drop": "trash-can",
+  "b_edit": "pen-to-square",
+  "b_empty": "trash",
+  "b_engine": "microchip",
+  "b_event_add": "calendar-plus",
+  "b_events": "calendar-days",
+  "b_export": "file-export",
+  "b_favorite": "star",
+  "b_find_replace": "magnifying-glass",
+  "b_firstpage": "angles-left",
+  "b_ftext": "align-left",
+  "b_globe": "globe",
+  "b_group": "layer-group",
+  "b_help": "circle-question",
+  "b_home": "house",
+  "b_import": "file-import",
+  "b_index": "list-ol",
+  "b_index_add": "list-ol",
+  "b_inline_edit": "pen-to-square",
+  "b_insrow": "square-plus",
+  "b_lastpage": "angles-right",
+  "b_left": "chevron-left",
+  "b_minus": "square-minus",
+  "b_more": "ellipsis",
+  "b_move": "arrows-up-down-left-right",
+  "b_newdb": "database",
+  "b_newtbl": "table",
+  "b_nextpage": "angle-right",
+  "b_no_favorite": "star",
+  "b_pdfdoc": "file-pdf",
+  "b_plugin": "plug",
+  "b_plus": "square-plus",
+  "b_prevpage": "angle-left",
+  "b_primary": "key",
+  "b_print": "print",
+  "b_props": "sliders",
+  "b_relations": "sitemap",
+  "b_report": "file-lines",
+  "b_rename": "pen",
+  "b_routine_add": "gears",
+  "b_routines": "gears",
+  "b_right": "chevron-right",
+  "b_save": "floppy-disk",
+  "b_saveimage": "image",
+  "b_search": "magnifying-glass",
+  "b_sbrowse": "table",
+  "b_sdb": "database",
+  "b_select": "mouse-pointer",
+  "b_snewtbl": "table",
+  "b_spatial": "map-location-dot",
+  "b_sqldoc": "file-code",
+  "b_sql": "code",
+  "b_sqlhelp": "circle-info",
+  "b_table_add": "table",
+  "b_tblanalyse": "chart-line",
+  "b_tblexport": "file-export",
+  "b_tblimport": "file-import",
+  "b_tblops": "table-list",
+  "b_tbloptimize": "gauge-high",
+  "b_tipp": "circle-info",
+  "b_trigger_add": "bolt",
+  "b_triggers": "bolt",
+  "b_undo": "arrow-rotate-left",
+  "b_unique": "fingerprint",
+  "b_usradd": "user-plus",
+  "b_usrcheck": "user-check",
+  "b_usrdrop": "user-xmark",
+  "b_usredit": "user-pen",
+  "b_usrlist": "users",
+  "b_versions": "code-branch",
+  "b_view": "eye",
+  "b_view_add": "eye",
+  "b_views": "eye",
+  "bd_browse": "table",
+  "bd_deltbl": "table-xmark",
+  "bd_drop": "trash-can",
+  "bd_edit": "pen-to-square",
+  "bd_empty": "trash",
+  "bd_export": "file-export",
+  "bd_firstpage": "angles-left",
+  "bd_ftext": "align-left",
+  "bd_index": "list-ol",
+  "bd_insrow": "square-plus",
+  "bd_lastpage": "angles-right",
+  "bd_nextpage": "angle-right",
+  "bd_prevpage": "angle-left",
+  "bd_primary": "key",
+  "bd_routine_add": "gears",
+  "bd_sbrowse": "table",
+  "bd_select": "mouse-pointer",
+  "bd_spatial": "map-location-dot",
+  "bd_unique": "fingerprint",
+  "centralColumns": "columns",
+  "centralColumns_add": "columns",
+  "centralColumns_delete": "columns",
+  "chevron-left": "chevron-left",
+  "chevron-right": "chevron-right",
+  "col_drop": "trash-can",
+  "console": "terminal",
+  "database": "database",
+  "db_drop": "database",
+  "eye": "eye",
+  "eye_grey": "eye",
+  "asc_order": "arrow-up-short-wide",
+  "hide": "eye-slash",
+  "item": "square",
+  "lightbulb": "lightbulb",
+  "more": "ellipsis",
+  "new_data": "square-plus",
+  "new_data_hovered": "square-plus",
+  "new_data_selected": "square-plus",
+  "new_data_selected_hovered": "square-plus",
+  "new_struct": "table",
+  "new_struct_hovered": "table",
+  "new_struct_selected": "table",
+  "new_struct_selected_hovered": "table",
+  "normalize": "sliders",
+  "pause": "pause",
+  "php_sym": "code",
+  "play": "play",
+  "s_asc": "arrow-up-short-wide",
+  "s_asci": "font",
+  "s_attention": "triangle-exclamation",
+  "s_cancel": "xmark",
+  "s_cancel2": "xmark",
+  "s_cog": "gear",
+  "s_collapseall": "arrows-up-down",
+  "s_db": "database",
+  "s_desc": "arrow-down-short-wide",
+  "s_error": "triangle-exclamation",
+  "s_fulltext": "align-left",
+  "s_host": "server",
+  "s_info": "circle-info",
+  "s_lang": "language",
+  "s_link": "link",
+  "s_lock": "lock",
+  "s_loggoff": "right-from-bracket",
+  "s_notice": "circle-exclamation",
+  "s_okay": "circle-check",
+  "s_partialtext": "align-left",
+  "s_passwd": "key",
+  "s_process": "gear",
+  "s_reload": "rotate",
+  "s_replication": "arrows-rotate",
+  "s_really": "circle-question",
+  "s_rights": "user-shield",
+  "s_sortable": "arrows-up-down",
+  "s_status": "signal",
+  "s_success": "check",
+  "s_sync": "rotate",
+  "s_tbl": "table",
+  "s_theme": "palette",
+  "s_top": "arrow-up",
+  "s_unlink": "link-slash",
+  "s_unlock": "lock-open",
+  "s_vars": "sliders",
+  "s_views": "eye",
+  "show": "eye",
+  "window-new": "up-right-from-square"
+);
+
+$fa-icons-regular: (
+  "lightbulb_off": "lightbulb"
+);
+
+@each $class, $icon in $fa-icons-solid {
+  .ic_#{$class} {
+    @include fa-mask($icon, solid);
+  }
+}
+
+@each $class, $icon in $fa-icons-regular {
+  .ic_#{$class} {
+    @include fa-mask($icon, regular);
+  }
+}
+
+.ic_ajax_spinner,
+.ic_ajax_clock_small,
+.ic_ajax_clock_small_gif {
+  animation: orzed-spin 1s linear infinite;
+}
+
+// Direct GIF spinners in templates/JS (ajax_clock_small.gif)
+img.ajaxIcon,
+img[src$="ajax_clock_small.gif"] {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: text-bottom;
+  background-color: currentColor;
+  -webkit-mask: url("../svgs/solid/spinner.svg") no-repeat center / 1em 1em;
+  mask: url("../svgs/solid/spinner.svg") no-repeat center / 1em 1em;
+  animation: orzed-spin 1s linear infinite;
+}
+
+img.ajaxIcon.hide,
+img.hide[src$="ajax_clock_small.gif"] {
+  display: none;
+}

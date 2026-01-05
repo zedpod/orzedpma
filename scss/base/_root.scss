@@ -1,0 +1,13 @@
+// Root
+
+:root {
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+
+  --scrollbar-bg: #12161a;
+  --scrollbar-thumb: #2a3440;
+  --scrollbar-thumb-hover: #3a4756;
+  --scrollbar-thumb-active: #49596b;
+  --scrollbar-size: 8px;
+}

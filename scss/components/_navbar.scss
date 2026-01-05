@@ -1,0 +1,87 @@
+// Navbar
+
+.navbar {  
+  background-color: #2c39542e !important;
+  border-bottom: 1px solid #2a3138;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-toggler {
+  border: none;
+  transition: none;
+
+  &:focus {
+    background-color: $navbar-light-toggler-focus-bg;
+    box-shadow: none;
+  }
+}
+
+.navbar-nav {
+  .nav-item{
+    margin: 0 1px;
+    border-radius: $nav-item-border-radius;
+
+    .nav-link {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .15rem;
+      line-height: 1.2;
+    }
+
+    .nav-link .icon,
+    .nav-link img.icon {
+      width: 1rem;
+      height: 1rem;
+      flex: 0 0 auto;
+      color: inherit;
+    }
+
+    .nav-link .ic_s_db { color: $pma-indigo; }
+    .nav-link .ic_b_sql,
+    .nav-link .ic_b_sqldoc { color: $pma-cyan; }
+    .nav-link .ic_s_status,
+    .nav-link .ic_b_chart { color: $pma-green; }
+    .nav-link .ic_b_usrlist { color: $pma-teal; }
+    .nav-link .ic_b_export,
+    .nav-link .ic_b_tblexport { color: $pma-orange; }
+    .nav-link .ic_b_import,
+    .nav-link .ic_b_tblimport { color: $pma-blue; }
+    .nav-link .ic_b_props { color: $pma-orange; }
+    .nav-link .ic_b_copy { color: $pma-indigo; }
+    .nav-link .ic_s_vars { color: $pma-teal; }
+    .nav-link .ic_s_lang { color: $pma-pink; }
+    .nav-link .ic_b_engine { color: $pma-green; }
+    .nav-link .ic_b_plugin { color: $pma-cyan; }
+    
+    &:hover {
+      @include button-variant($component-active-bg, $component-active-bg);
+      background-color: #1c2126;
+      color: var(--bs-btn-color);
+    }
+
+    &.active {
+      @include button-variant($component-active-bg, $component-active-bg);
+      color: var(--bs-btn-color);
+      background-color: var(--bs-btn-bg);
+
+      &:first-child {
+        border-top-left-radius: 0;
+      }
+
+      .nav-link {
+        color: var(--bs-btn-color);
+      }
+
+      .icon {
+        filter: brightness(0) invert(0);
+      }
+    }
+  }
+}
+
+@include media-breakpoint-only(md) {
+  .navbar-collapse {
+    overflow: hidden !important;
+  }
+}

@@ -1,0 +1,25 @@
+// Alerts
+
+.alert {
+  color: $pma-body-color;
+  background-color: rgba($pma-body-color, .03);
+  border-color: $pma-border-color;
+  border-left: 3px solid $pma-border-color;
+  box-shadow: 0 8px 20px rgba($black, .18);
+}
+
+.alert-info {
+  border-left-color: $pma-blue;
+}
+
+.alert-success {
+  border-left-color: $pma-green;
+}
+
+.alert-warning {
+  border-left-color: $pma-orange;
+}
+
+.alert-danger {
+  border-left-color: $pma-pink;
+}

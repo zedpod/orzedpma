@@ -1,0 +1,42 @@
+// Breadcrumb
+
+.breadcrumb-navbar {
+  padding: $breadcrumb-navbar-padding-y $breadcrumb-navbar-padding-x;
+  margin-bottom: $breadcrumb-navbar-margin-bottom;
+  border-bottom: 1px solid $border-color;
+
+  background-color: #161b2612 !important;
+  border-bottom: 1px solid #2a3138;
+  backdrop-filter: blur(4px);
+
+  .breadcrumb-item {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+
+    + .breadcrumb-comment {
+      padding-left: $breadcrumb-item-padding-x;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      line-height: 1.2;
+      color: $body-color;
+    }
+
+    .icon,
+    img.icon {
+      width: 1rem;
+      height: 1rem;
+      flex: 0 0 auto;
+      color: inherit;
+    }
+
+    .ic_s_host { color: $pma-blue; }
+    .ic_s_db { color: $pma-indigo; }
+    .ic_b_views { color: $pma-teal; }
+    .ic_s_tbl { color: $pma-orange; }
+  }
+}
