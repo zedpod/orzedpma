@@ -1484,7 +1484,8 @@ input#auto_increment_opt {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 5001;
+  z-index: 9000;
+  isolation: isolate;
 }
 
 .coldrop {
@@ -1506,7 +1507,8 @@ input#auto_increment_opt {
 .cList {
   position: absolute;
   right: auto;
-  z-index: 5000;
+  z-index: 9001;
+  isolation: isolate;
   overflow-wrap: break-word;
   background: $pma-component-bg;
   border: 1px solid $pma-border-color;
