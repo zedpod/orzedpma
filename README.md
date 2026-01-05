@@ -1,13 +1,6 @@
 # OrzedPMA v1.0.0
 
-![Screenshot](screen-animated.png)
-
-## Visuals
-
-![OrzedPMA UI 1](https://orzed.com/pubimg/orzedpma1.png)
-![OrzedPMA UI 2](https://orzed.com/pubimg/orzedpma2.png)
-
-Modern near-dark theme for phpMyAdmin 5.2.x with muted accents, low glare, and minimal color noise.
+Modern near-dark theme for >= phpMyAdmin 5.2.x with muted accents, low glare, and minimal color noise.
 
 ## Highlights
 
@@ -15,6 +8,11 @@ Modern near-dark theme for phpMyAdmin 5.2.x with muted accents, low glare, and m
 - Unified navigation/background surfaces with subtle separation
 - Local fonts and Font Awesome assets (no external runtime dependencies)
 - Icon system mapped to Font Awesome SVGs
+
+## Visuals
+
+![OrzedPMA UI 1](https://orzed.com/pubimg/orzedpma1.png)
+![OrzedPMA UI 2](https://orzed.com/pubimg/orzedpma2.png)
 
 ## Install
 
@@ -34,15 +32,6 @@ sass --style=compressed --source-map --load-path=scss/vendors scss/theme.scss cs
 rtlcss css/theme.css css/theme.rtl.css
 ```
 
-## Logo link (optional)
-
-To link the navigation logo to Orzed Software:
-
-```php
-$cfg['NavigationLogoLink'] = 'https://www.orzed.com';
-$cfg['NavigationLogoLinkWindow'] = 'new';
-```
-
 ## Notes
 
 - Font Awesome assets are bundled locally in `webfonts/` and `svgs/`.
@@ -51,8 +40,7 @@ $cfg['NavigationLogoLinkWindow'] = 'new';
 
 ## Author & Links
 
-- GitHub: https://github.com/ugurakcil
-- Instagram: https://instagram.com/datasins
-- LinkedIn: https://www.linkedin.com/in/ugurakcil/
-- Website: https://ugurakcil.com
-- Website: https://datasins.com
+- GitHub: https://github.com/orzed
+- Instagram: https://instagram.com/orzedco
+- LinkedIn: https://www.linkedin.com/company/orzed/
+- Website: https://www.orzed.com
